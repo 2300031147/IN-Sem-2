@@ -164,7 +164,7 @@ cd frontend
 DOCKER_BUILDKIT=0 docker build -t ticket-booking-frontend:latest .
 ```
 
-**Note:** The `DOCKER_BUILDKIT=0` flag is required when building the frontend image due to a BuildKit issue with optional dependencies in the rolldown package. Alternatively, use the provided `build-images.sh` script which handles this automatically.
+**Note:** The `DOCKER_BUILDKIT=0` flag is required when building the frontend image due to a BuildKit issue with optional dependencies in the rolldown package (see [npm/cli#4828](https://github.com/npm/cli/issues/4828)). Alternatively, use the provided `build-images.sh` script which handles this automatically.
 
 ### Deploy to Kubernetes
 
