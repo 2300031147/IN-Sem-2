@@ -5,6 +5,9 @@ set -e  # Exit on any error
 
 echo "Building Docker images for Ticket Booking Application..."
 
+# Disable BuildKit to avoid issues with optional dependencies
+export DOCKER_BUILDKIT=0
+
 # Build backend image
 echo ""
 echo "Building backend image..."

@@ -102,7 +102,7 @@ A fullstack online ticket booking application built with Vite React frontend, No
 ## Local Development Setup
 
 ### Prerequisites
-- Node.js 18+
+- Node.js 20+
 - MySQL 8.0+
 - Docker & Docker Compose (optional)
 
@@ -157,12 +157,14 @@ Access the application:
 ```bash
 # Build backend image
 cd backend
-docker build -t ticket-booking-backend:latest .
+DOCKER_BUILDKIT=0 docker build -t ticket-booking-backend:latest .
 
 # Build frontend image
 cd frontend
-docker build -t ticket-booking-frontend:latest .
+DOCKER_BUILDKIT=0 docker build -t ticket-booking-frontend:latest .
 ```
+
+**Note:** The `DOCKER_BUILDKIT=0` flag is required when building the frontend image due to a BuildKit issue with optional dependencies in the rolldown package. Alternatively, use the provided `build-images.sh` script which handles this automatically.
 
 ### Deploy to Kubernetes
 
