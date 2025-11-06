@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script to build Docker images for the ticket booking application
+set -e  # Exit on any error
 
 echo "Building Docker images for Ticket Booking Application..."
 
@@ -9,12 +10,7 @@ echo ""
 echo "Building backend image..."
 cd backend
 docker build -t ticket-booking-backend:latest .
-if [ $? -eq 0 ]; then
-    echo "✓ Backend image built successfully"
-else
-    echo "✗ Failed to build backend image"
-    exit 1
-fi
+echo "✓ Backend image built successfully"
 cd ..
 
 # Build frontend image
@@ -22,12 +18,7 @@ echo ""
 echo "Building frontend image..."
 cd frontend
 docker build -t ticket-booking-frontend:latest .
-if [ $? -eq 0 ]; then
-    echo "✓ Frontend image built successfully"
-else
-    echo "✗ Failed to build frontend image"
-    exit 1
-fi
+echo "✓ Frontend image built successfully"
 cd ..
 
 echo ""

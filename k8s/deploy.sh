@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script to deploy the ticket booking application to Kubernetes
+set -e  # Exit on any error
 
 echo "Deploying Ticket Booking Application to Kubernetes..."
 

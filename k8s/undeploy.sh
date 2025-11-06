@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script to undeploy the ticket booking application from Kubernetes
+set -e  # Exit on any error
 
 echo "Undeploying Ticket Booking Application from Kubernetes..."
 
