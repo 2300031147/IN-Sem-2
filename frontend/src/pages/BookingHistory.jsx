@@ -16,6 +16,7 @@ function BookingHistory() {
       return;
     }
     loadBookings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   const loadBookings = async () => {

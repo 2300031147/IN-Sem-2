@@ -20,6 +20,7 @@ function Booking() {
       return;
     }
     loadShowAndSeats();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, isAuthenticated]);
 
   const loadShowAndSeats = async () => {
